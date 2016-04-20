@@ -1,9 +1,9 @@
 <div class="title">
-  <h2>{{ #chartsTitle# }}</span></h2>
+  <h2>Section: <span>Charts Top 10</span></h2>
 </div>
 
 <section class="grid-3">
-  {{ $start = "2013" }}
+  {{ $start = "2016" }}
   {{ $now = $smarty.now|camp_date_format:"%Y" }}
   {{ while $now >= $start }}
   <article>

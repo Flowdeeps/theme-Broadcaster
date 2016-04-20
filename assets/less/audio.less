@@ -1,0 +1,261 @@
+// styles for setting up the audio
+
+.audio-trigger,
+audio {
+  display: none;
+}
+
+.js {
+  #player {
+    overflow: hidden;
+    float: right;
+    position: relative;
+    z-index: 1;
+    width: 290px;
+    .audio-trigger {
+      opacity: 1;
+      display: block;
+      width: 290px;
+      height: 140px;
+      margin: 0;
+      background: url("@{img_path}/play_bckg.svg");
+      background-size: 78%;
+      background-repeat: no-repeat;
+      border: none;
+      margin: 0 auto;
+      background-position: center center;
+      &:focus {
+        outline: none;
+      }
+      span {
+        display: block;
+        margin: 0 auto;
+        width: 76px;
+        height: 76px;
+        border: 3px solid @color-white;
+        border-radius: 50%;
+        background: rgba(24, 26, 30, 0.6) url("@{img_path}/play.svg") no-repeat 25px center;
+      }
+      &:hover{
+        span {
+          background-color: #000;
+        }
+      }
+    }
+  }
+
+  @keyframes play {
+      from {background-size: auto 226px}
+      to {background-size: auto 218px;}
+  }
+
+  .audio-now-playing {
+    .audio-trigger {
+      animation-name: play;
+      animation-duration: 500ms;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      animation-play-state: running;
+      span {
+        background: rgba(24, 26, 30, 0.6) url("@{img_path}/pause.svg") no-repeat center center!important;
+      }
+    }
+  }
+
+  /**
+   * CSS from http://mediaelementjs.com/ used for the audio player
+   */
+
+  .mejs-offscreen {
+    /* Accessibility: hide screen reader texts (and prefer "top" for RTL languages). */
+    position: absolute !important;
+    top: -10000px;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+  }
+
+
+  audio {
+    display: block;
+    margin: 0 auto;
+  }
+
+  .mejs-container {
+    position: relative;
+    margin: 0 auto;
+    background: #212327;
+    font-family: Helvetica, Arial;
+    text-align: left;
+    vertical-align: top;
+    text-indent: 0;
+    width: 215px !important;
+    height: 33px !important;
+    border-radius: 30px;
+    background-image: url("@{img_path}/audio-sound-on.svg");
+    background-size: 18px;
+    background-repeat: no-repeat;
+    background-position: 189px center;
+  }
+
+
+  .mejs-clear {
+    display: none;
+  }
+
+
+  /* Start: Mute/Volume */
+  .mejs-controls {
+    .mejs-volume-button {
+      width: 33px;
+      height: 33px;
+      float: left;
+      margin: 0 4px 0 0;
+    }
+    
+    .mejs-mute {
+       button {
+        width: 33px;
+        height: 33px;
+        background-image: url("@{img_path}/audio-sound-off.svg");
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: center center;
+        border: none;
+        cursor: pointer;
+      }
+      &:hover button {
+        width: 33px;
+        height: 33px;
+        background-image: url("@{img_path}/audio-sound-off-hover.svg");
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: center center;
+        border: none;
+      }
+    }
+
+    .mejs-unmute {
+      button {
+        width: 33px;
+        height: 33px;
+        background-image: url("@{img_path}/audio-sound-off-red.png");
+        background-size: 18px;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        background-position: center center;
+        border: none;
+        cursor:pointer;
+      }
+    }
+
+    .mejs-volume-button {
+      position: relative;
+    }
+
+    .mejs-volume-button {
+      .mejs-volume-slider {
+        display: none;
+        height: 115px;
+        width: 25px;
+        background: url(background.png);
+        background: rgba(50, 50, 50, 0.7);
+        -webkit-border-radius: 0;
+        -moz-border-radius: 0;
+        border-radius: 0;
+        top: -115px;
+        left: 0;
+        z-index: 1;
+        position: absolute;
+        margin: 0;
+      }
+      &:hover {
+        -webkit-border-radius: 0 0 4px 4px;
+           -moz-border-radius: 0 0 4px 4px;
+                border-radius: 0 0 4px 4px;
+      }
+    }
+
+    .mejs-volume-button {
+      .mejs-volume-slider{
+        .mejs-volume-total {
+          position: absolute;
+          left: 11px;
+          top: 8px;
+          width: 2px;
+          height: 100px;
+          background: #ddd;
+          background: rgba(255, 255, 255, 0.5);
+          margin: 0;
+          .mejs-volume-current {
+            position: absolute;
+            left: 11px;
+            top: 8px;
+            width: 2px;
+            height: 100px;
+            background: #ddd;
+            background: rgba(255, 255, 255, 0.9);
+            margin: 0;
+          }
+        }
+        .mejs-volume-handle {
+          position: absolute;
+          left: 4px;
+          top: -3px;
+          width: 16px;
+          height: 6px;
+          background: #ddd;
+          background: rgba(255, 255, 255, 0.9);
+          cursor: N-resize;
+          -webkit-border-radius: 1px;
+          -moz-border-radius: 1px;
+          border-radius: 1px;
+          margin: 0;
+        }
+      }
+    }
+
+    /* horizontal version */
+    a.mejs-horizontal-volume-slider {
+      height: 13px;
+      width: 141px;
+      position: relative;
+      display: block !important;
+      float: left;
+      vertical-align: middle;
+      border-radius: 20px;
+      background: #434549;
+      margin: 10px 0 0 0;
+      overflow: hidden;
+    }
+    .mejs-horizontal-volume-slider {
+      .mejs-horizontal-volume-total {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 141px;
+        height: 0;
+        margin: 0;
+        padding: 0;
+        font-size: 1px;
+      }
+      .mejs-horizontal-volume-current {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 13px;
+        margin: 0;
+        padding: 0;
+        font-size: 1px;
+        background: #fff;
+      }
+    }
+    .mejs-horizontal-volume-handle {
+      display: none;
+    }
+  }
+}

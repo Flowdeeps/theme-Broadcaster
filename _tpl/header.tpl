@@ -1,4 +1,4 @@
-{{ config_load file="settings.tpl" section="Site" }}
+{{ config_load file="settings.tpl" section="Stream" }}
 
 <body dir="{{ if $gimme->issue->language->code == ar }}rtl{{ else }}ltr{{ /if }}">
     <header id="main_header">
@@ -77,30 +77,52 @@
             <a href="/{{ $gimme->language->code }}/content/">{{ $gimme->publication->name }}</a>
           </h1>
 
-          <iframe frameborder="0"
-                  width="280"
-                  height="216"
-                  src="https://sourcefabric.airtime.pro:443/embed/player?stream=auto&title=Now Playing">
-          </iframe>
+          <div id="player">
 
-          {{*
+            <button class="audio-trigger">
+              <span></span>
+            </button>
+
+            <audio class="audioplayer" id="audioplayer" controls>
+              <source src="{{ #StreamingServer# }}:{{ #StreamPort# }}/{{ #StreamA# }}" type="audio/ogg">
+              <source src="{{ #StreamingServer# }}:{{ #StreamPort# }}/{{ #StreamB# }}" type="audio/mpeg">
+            </audio>
+
+          </div>
+
           <nav id="language_select">
             {{ local }}
-            {{ unset_issue }}
-            {{ unset_language }}
-            <ul>
-            {{ list_issues constraints = "number is 10" }}
-            {{ $currLang = $gimme->language->name }}
-            {{ set_language name="$currLang" }}
-              <li {{ if $gimme->language->name == $gimme->default_language->name }}class="active"{{ /if }}><a href="{{ uri }}">{{ $gimme->language->name }}</a></li>
-            {{ /list_issues }}
-            </ul>
-            {{ set_default_language }}
-            {{ set_default_issue }}
+              {{ unset_issue }}
+              {{ unset_language }}
+              {{ $defaultLang = $gimme->language->name }}
+
+              {{ assign var="i" value=1 }}
+              {{ list_issues constraints = "number is 10" }}
+                {{ $i = $i + 1 }}
+              {{ /list_issues }}
+
+              {{ if $i > 1 }}
+                <ul>
+              {{ /if }}
+
+              {{ list_issues constraints = "number is 10" }}
+                <!-- {{ $i }} -->
+                {{ $currLang = $gimme->language->name }}
+                {{ set_language name="$currLang" }}
+                {{ if $defaultLang != $currLang }}
+                  <li {{ if $gimme->language->name == $gimme->default_language->name }}class="active"{{ /if }}><a href="{{ uri }}">{{ $gimme->language->name }}</a></li>
+                {{ /if }}
+              {{ /list_issues }}
+
+              {{ if $i > 1 }}
+                </ul>
+              {{ /if }}
+
+              {{ set_default_language }}
+              {{ set_default_issue }}
             {{ /local }}
           </nav>
-          *}}
-
+   
         </div><!-- / Header -->
         
         <div id="nav-bar" class="clearfix">
@@ -109,18 +131,16 @@
           {{ set_issue number="10" }}
           <ul class="show">
             <li><a href="/{{ $gimme->language->code }}/content/">{{ #content# }}</a></li>
-            {{ list_sections constraints="number not 30 number not 40 number not 80 number not 90 number not 100" }}
-              {{ local }}
-              {{ set_issue number="1" }}
-              {{ list_articles constraints="type is Program_Grid"}}
-                <li><a href="{{ url options='article' }}">{{ $gimme->article->name }}</a></li>
-              {{ /list_articles }}
-              {{ /local }}
-              {{ list_sections constraints="number is 100" }}
-                <li><a href="{{ url options='section' }}">{{ $gimme->section->name }}</a></li>
-              {{ /list_sections }}
-            <li><a href="{{ url options='section' }}">{{ $gimme->section->name }}</a></li>
-          {{ /list_sections }}
+            {{ local }}
+            {{ set_issue number="1" }}
+            {{ list_articles constraints="type is Program_Grid"}}
+              <li><a href="{{ url options='article' }}">{{ $gimme->article->name }}</a></li>
+            {{ /list_articles }}
+            {{ /local }}
+            {{ list_sections }}
+              <li><a href="{{ url options='section' }}">{{ $gimme->section->name }}</a></li>
+            {{ /list_sections }}
+            <li><a href="/airtime/shows">{{ #shows# }}</a></li>
           </ul>
           {{ /local }}
         </div><!-- / Nav Bar -->

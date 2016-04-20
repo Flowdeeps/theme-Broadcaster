@@ -10,11 +10,96 @@ $(document).ready(function() {
     if (this.value ==='')this.value=this.defaultValue;
   });
 
-  // User list slider
-  // $('.slider').jcarousel({
-  //  visble: 1,
-  //  scroll: 1
-  // });
+  // init mediaelements.js audiolibrary
+  $('audio.audioplayer').mediaelementplayer({
+      audioWidth: 215,
+      audioHeight: 35,
+      loop: true,
+      iPadUseNativeControls: true,
+      iPhoneUseNativeControls: true, 
+      AndroidUseNativeControls: true,
+      features: ['volume']
+  });
+
+  var player = $("audio.audioplayer")[0];
+
+  // audio player
+  $('.audio-change, .audio-trigger').click(function (e) {
+      e.preventDefault();
+      
+      if ($('body').hasClass('audio-now-playing')) {
+          player.pause();
+      } else {
+          player.play();
+      }
+  });
+
+  $('#js-change-sound').on('click', function (e) {
+      e.preventDefault();
+      if ($("audio.audioplayer")[0].volume > 0) {
+          $('body').addClass('audio-sound');
+          player.volume = 0;
+      } else {
+          $('body').removeClass('audio-sound');
+          player.volume = 1;
+      }
+  });
+
+  // now playing elements
+  var nowplaying = $('.now-playing-bar');
+  var current = nowplaying.find('.current');
+  var next = nowplaying.find('.next');
+
+  // get api elements
+  // current
+  var dataCurrPrefix = "Current: "
+  var dataCurrentName = "";
+  var dataCurrentElapsed = "";
+  var dataCurrentRemain = "";
+  // next
+  var dataNextPrefix = "Next: ";
+  var dataNextName = "";
+  var dataNextStart = "";
+  var dataNextEnd = "";
+
+  $.ajax({
+    url: 'https://sourcefabric.airtime.pro/api/live-info/',
+    dataType: 'jsonp',
+    success: function(data){
+      console.log(data);
+      var i = 0;
+      var refresh = setInterval(function(){
+        console.log('ping', i);
+        i++;
+        // current
+        dataCurrentName = dataCurrPrefix + data.current.name;
+        dataCurrentElapsed = data.schedulerTime;
+        // console.log(data.current.ends.split(' '));
+        current.find('h3').html(dataCurrentName);
+        current.find('.elapsed').html(dataCurrentElapsed);
+        current.find('.remaining').html(dataCurrentRemain);
+        // next
+        dataNextName = dataNextPrefix + data.next.name;
+        dataNextStart = data.nextShow.starts;
+        dataNextEnd = data.nextShow.ends;
+        next.find('h3').html(dataNextName);
+        next.find('.start').html(dataNextStart);
+        next.find('.end').html(dataNextEnd);
+      }, 1000);
+    }
+  });
+
+  $('audio').on('play pause', function () {
+      if (this.paused) {
+          $('title').text('Radio FFM');
+          $('body').removeClass('audio-now-playing');
+          $('.hl-onair span').text('');
+      } else {
+          $('.hl-onair span').text($('.sec-onair h2').text());
+          $('title').text($('.sec-onair h2').text() + ' | Radio FFM');
+          $('body').addClass('audio-now-playing');
+      }
+  });
 
   if( $(window).width() < 660) {
 
@@ -103,26 +188,6 @@ $(document).ready(function() {
     return false;
   });
 
-  // programgrid
-  $("#headerLiveHolder").airtimeLiveInfo({
-      sourceDomain: apiSrc,
-      text: {onAirNow:"On Air Now", offline:"Offline", current:"Current", next:"Next"},
-      updatePeriod: 20 //seconds
-  });
-
-  $("#headerLiveTrackHolder").airtimeLiveTrackInfo({
-      sourceDomain: apiSrc,
-      text: {onAirNow:"On Air Now", offline:"Offline", current:"Current", next:"Next"},
-      updatePeriod: 20 //seconds
-  });
-
-  $("#onAirToday").airtimeShowSchedule({
-      sourceDomain: apiSrc,
-      text: {onAirToday:"On air today"},
-      updatePeriod: 5, //seconds
-      showLimit: 10
-  });
-
   // active state gubbins for the program grid 
   if ($('.program_grid')[0]){
 
@@ -161,7 +226,6 @@ $(document).ready(function() {
       });
     }, 1000);
 
-
     $("#scheduleTabs").airtimeWeekSchedule({
       sourceDomain: apiSrc,
       dowText:{monday:"Monday", tuesday:"Tuesday", wednesday:"Wednesday", thursday:"Thursday", friday:"Friday", saturday:"Saturday", sunday:"Sunday"},
@@ -192,5 +256,8 @@ $(document).ready(function() {
       }
     });
   }
+
+  // show the page when it's loaded.
+  $('html').removeClass('hidden');
 
 });

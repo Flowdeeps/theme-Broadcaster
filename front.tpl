@@ -1,6 +1,6 @@
 {{ config_load file="strings-{{ $gimme->language->code }}.tpl" }}
 
-{{ include file="_tpl/_html-head.tpl" }}
+{{ include file="_tpl/_html-head-min.tpl" }}
 
 {{ include file="_tpl/header.tpl" }}
 
@@ -16,7 +16,7 @@
 
     </div><!-- / Wrapper -->
 
-{{ include file="_tpl/_html-foot.tpl" }}
+{{ include file="_tpl/_html-foot-min.tpl" }}
 
 </body>
 </html>

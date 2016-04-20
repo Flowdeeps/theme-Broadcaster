@@ -1,0 +1,22 @@
+{
+  "name": "broadcaster",
+  "version": "0.2.0",
+  "homepage": "https//broadcaster.lab.sourcefabric.org",
+  "authors": [
+    "Pete Haughie <pete.haughie@sourcefabric.org>"
+  ],
+  "description": "A Newscoop theme for utilising Airtime streams",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/js/components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "jquery": "~2.1.1"
+  }
+}

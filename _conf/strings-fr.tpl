@@ -103,6 +103,7 @@ current = ""
 hostedBy = ""
 podcast = ""
 show = "Afficher"
+shows = "Affiche"
 archive = ""
 
 # _tpl/program-grid-cont.tpl

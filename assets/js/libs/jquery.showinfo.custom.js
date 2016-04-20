@@ -484,30 +484,30 @@ function getTime(timestamp) {
 /* Takes an input parameter of milliseconds and converts these into
  * the format HH:MM:SS */
 function convertToHHMMSS(timeInMS){
-	var time = parseInt(timeInMS);
+  var time = parseInt(timeInMS);
 
-	var hours = parseInt(time / 3600000);
-	time -= 3600000*hours;
+  var hours = parseInt(time / 3600000);
+  time -= 3600000*hours;
 
-	var minutes = parseInt(time / 60000);
-	time -= 60000*minutes;
+  var minutes = parseInt(time / 60000);
+  time -= 60000*minutes;
 
-	var seconds = parseInt(time / 1000);
+  var seconds = parseInt(time / 1000);
 
-	hours = hours.toString();
-	minutes = minutes.toString();
-	seconds = seconds.toString();
+  hours = hours.toString();
+  minutes = minutes.toString();
+  seconds = seconds.toString();
 
-	if (hours.length == 1)
-		hours = "0" + hours;
-	if (minutes.length == 1)
-		minutes = "0" + minutes;
-	if (seconds.length == 1)
-		seconds = "0" + seconds;
-	if (hours == "00")
-		return minutes + ":" + seconds;
-	else
-		return hours + ":" + minutes + ":" + seconds;
+  if (hours.length == 1)
+    hours = "0" + hours;
+  if (minutes.length == 1)
+    minutes = "0" + minutes;
+  if (seconds.length == 1)
+    seconds = "0" + seconds;
+  if (hours == "00")
+    return minutes + ":" + seconds;
+  else
+    return hours + ":" + minutes + ":" + seconds;
 }
 
 /* Takes in a string of format similar to 2011-02-07 02:59:57,
@@ -517,11 +517,11 @@ function convertDateToPosixTime(s){
 
     var date = datetime[0].split("-");
     var time = datetime[1].split(":");
-  	var year = date[0];
-  	var month = date[1];
-  	var day = date[2];
-  	var hour = time[0];
-  	var minute = time[1];
+    var year = date[0];
+    var month = date[1];
+    var day = date[2];
+    var hour = time[0];
+    var minute = time[1];
     var sec = 0;
     var msec = 0;
 
@@ -532,7 +532,7 @@ function convertDateToPosixTime(s){
     } else
       sec = time[2];
 
-	return Date.UTC(year, month-1, day, hour, minute, sec, msec);
+  return Date.UTC(year, month-1, day, hour, minute, sec, msec);
 }
 
 /* Checks the incomming data's widget version tag.

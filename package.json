@@ -1,0 +1,19 @@
+{
+  "name": "broadcaster",
+  "version": "0.2.0",
+  "author": "Pete Haughie @peteofrepublic",
+  "private": true,
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-autoprefixer": "^2.0.0",
+    "grunt-contrib-copy": "^0.8.2",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-cssc": "*",
+    "grunt-htmlhint": "*",
+    "grunt-static-inline": "^0.1.4",
+    "matchdep": "*"
+  }
+}

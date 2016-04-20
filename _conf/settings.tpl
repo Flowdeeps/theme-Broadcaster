@@ -21,6 +21,8 @@ StationName = "Sourcefabric Radio"
 # URL of your Airtime server
 AirtimeAPI = "//sourcefabric.airtime.pro"
 
+AirtimeAPIPort = "443"
+
 # URL of your streaming server
 StreamingServer = "//sourcefabric.out.airtime.pro"
 

@@ -22,6 +22,12 @@
         {{ include file="_tpl/podcast-cont.tpl" }}
         </div>
       </section>
+      {{ else if $gimme->section->number == 70 }}
+      <section>
+        <div id="content">
+        {{ include file="_tpl/chart-cont.tpl" }}
+        </div>
+      </section>
       {{ else }}
       <section class="main entry">
         <div id="content" class="clearfix">

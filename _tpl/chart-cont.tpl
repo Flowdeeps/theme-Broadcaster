@@ -15,9 +15,6 @@
                 }}
                 {{ assign var=int value=1 }}
 
-<p>* = Canadian artist<br />
-^ = Torontonian artist</p>
-
 <table class="widget widget now-playing-list">
   <colgroup>
     <col style="text-align: center;" width="30">

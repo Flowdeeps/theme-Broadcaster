@@ -37,7 +37,7 @@
     </tr>
   </tfoot>
   <tbody>
-  {{ while $int <= 30 }}
+  {{ while $int <= 10 }}
   {{ $artist = '_artist' }}
   {{ $album = '_album' }}
   {{ $label = '_label' }}

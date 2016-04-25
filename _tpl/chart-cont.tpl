@@ -41,7 +41,7 @@
   {{ $can = '_canadian' }}
   {{ $tor = '_torontonian' }}
     <tr>
-      <td {{ if $int <= 3 }}class="{{ if $int == 1 }}first_place{{ else if $int == 2 }}second_place{{ else if $int == 3 }}third_place{{ /if }}"{{ /if }}>{{ $int }}</td>
+      <td {{ if $int <= 3 }}class="{{ if $int == 1 }}first_place{{ else if $int == 2 }}second_place{{ else if $int == 3 }}third_place{{ /if }}"{{ /if }}><p>{{ $int }}</p></td>
       <td>
       {{ $var = $numbers[$int]|cat:$artist }}
         <h4>
@@ -56,7 +56,7 @@
         </h4>
       </td>
       {{ $var = $numbers[$int]|cat:$album }}
-      <td>{{ $gimme->article->$var }}</td>
+      <td><p>{{ $gimme->article->$var }}</p></td>
     </tr>
   {{ $int = $int + 1 }}
   {{ /while }}

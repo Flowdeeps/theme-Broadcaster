@@ -3,7 +3,7 @@
 @sec-color: #222222;
 @border-color: #dddddd;
 @title-article-color: #1a171b;
-@body-text-color: #444444; 
+@body-text-color: #444444;
 @color-white: #ffffff;
 
 // Global Rulesets
@@ -44,7 +44,7 @@ h2 {
   }
 }
 h3, h4 { font-family: @font-sec; text-transform: uppercase;}
-h3 { 
+h3 {
   font-size: 20px; line-height: 20px; color: @title-article-color;
   a { color: @title-article-color; text-decoration: none;
     &:hover {text-decoration: underline;}
@@ -171,7 +171,7 @@ audio { width: 100%; }
             }
           }
         }
-    
+
     }
   .current_widget {
     background-color: #f0f0f0;
@@ -230,7 +230,7 @@ section {
   }
 .cs_img img{ width: 100%; max-width: 400px; }
 .cs_fl_right { float:right; margin-left: 20px;}
-.cs_fl_left { float:left; margin-right: 20px;}  
+.cs_fl_left { float:left; margin-right: 20px;}
 article {
   float: left; position: relative;
   img {display: block;}
@@ -256,7 +256,7 @@ article {
         &:hover { text-decoration: underline; }
         }
       }
-  .comments_num { font-style: italic; text-decoration: none; color: @sec-color; font-size: 12px; 
+  .comments_num { font-style: italic; text-decoration: none; color: @sec-color; font-size: 12px;
            &:hover {text-decoration: underline;}
           }
   .more {
@@ -298,7 +298,7 @@ article {
       &:last-child{padding: 0 5px;}
       span, a {font-style: normal;}
       a {
-        display: block; 
+        display: block;
         margin: 5px -5px 0; padding: 2px 5px;
         color: #fff; text-decoration: none;
         background: @main-color;
@@ -326,7 +326,7 @@ article {
   -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
 
  .title.page-title { clear: both; }
- 
+
   div { float: left; width: 40%; }
   h2 {color: #fff;}
   h3 {color: #aee2de; margin-bottom: 15px;}
@@ -350,7 +350,7 @@ article {
     padding-left: 10px;
     }
   }
-  
+
   .show_archive {
   li { display: block; margin-right: 10px; margin-bottom: 15px; max-width: 450px }
   a.archive_play { font-size: 12px;
@@ -365,7 +365,7 @@ article {
     .play_progress.playing{ display: block; margin-top: 10px; background: #f0f0f0; border: 1px solid #dddddd;
     .play_bar { background: @main-color; height: 4px; }
     }
-    
+
   }
 }
 
@@ -377,16 +377,16 @@ article {
   border-right: 1px solid #f0f0f0;
   font-weight: bold;
   }
-  
+
   table { width: 100%; }
-  
+
   thead {
     background: #f0f0f0;
     border: 1px solid #dddddd;
-    td { 
+    td {
       padding: 15px;
       font-weight: bold;
-      }    
+      }
     }
   tbody {
   tr {
@@ -401,13 +401,13 @@ article {
     .label_col { font-family: @font-prim; font-style: italic; }
     }
   }
-  
+
 }
 
 // Artist profile
 
 .artist_profile {
-  
+
   article {
   padding: 30px;
   margin-bottom: 30px;
@@ -505,7 +505,6 @@ article {
       }
   }
 }
-
 
 // Category Video
 
@@ -659,7 +658,36 @@ article {
 
 }
 
-
+// chart page
+.chart {
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    thead {
+      background: #f0f0f0;
+      border: 1px solid #dddddd;
+      tr {
+        td {
+          text-align: center;
+        }
+      }
+    }
+    tbody {
+      tr {
+        border-left: 3px solid #d8d8d8;
+        border-bottom: 1px solid #cfcfcf;
+        td:nth-first-child {
+          text-align: center;
+        }
+      }
+    }
+    td {
+      padding: 15px;
+      vertical-align: top;
+    }
+  }
+}
 
 // Form styles
 .form-content {
@@ -794,7 +822,7 @@ article {
     float: left;
     width: 290px;
     margin-right: 30px;
-  
+
   &:nth-of-type(3n) {margin-right: 0;}
     &:nth-of-type(3n + 1) {clear:left;}
 
@@ -904,10 +932,10 @@ article {
       &:hover { text-decoration: underline; }
       }
     }
- 
+
   .social_links {
           background: #f4f4f4; padding: 20px; border: 1px solid #dbdbdb;
-          h3 { 
+          h3 {
             font-size: 24px;
             font-family: @font-ter;
             span {
@@ -1061,7 +1089,7 @@ article {
     }
   }
 }
-  
+
 aside {
   float: right;
   width: 290px;
@@ -1105,7 +1133,7 @@ aside {
     font-family: @font-sec; color: #fff; font-size: 13px; text-transform: none; line-height: 35px;
     }
   .pages {
-      background: red; 
+      background: red;
       a {
         display: none;
         }
@@ -1315,7 +1343,7 @@ aside {
    h4 {
      max-width: 283px;
    }
-    
+
     .grid-3-top {
       position: absolute; top: 6px; right: 0;
       padding:0; margin: 0;
@@ -1386,7 +1414,7 @@ aside {
             position: absolute;
           }
         }
-      }  
+      }
     }
   .right {
     position: absolute; top: 0; right: 10px; float: none;
@@ -1423,7 +1451,7 @@ aside {
         text-decoration: none;
         &.active, &:hover {color: #fff;}
         }
-      }  
+      }
     }
   .right {
     position: absolute; top: 0; right: 10px; float: none;
@@ -1507,7 +1535,7 @@ aside {
                   }
           }
         }
-  .tweet_wrap { 
+  .tweet_wrap {
         float: left;
         width: 100%;
         max-width: 290px;
@@ -1649,7 +1677,7 @@ aside {
       }
       .details {
         ul {
-          li {margin-right: 20px;}  
+          li {margin-right: 20px;}
         }
       }
     }
@@ -1708,18 +1736,18 @@ aside {
     h4 { height: 30px; overflow: hidden;}
     .more {padding-top: 10px;}
   }
-  
+
 }
 
 .grid-2 iframe { max-width: 100%; margin-right: 0px; }
 
   .grid-3 article:nth-of-type(3n) { margin-right: 30px; }
-  
+
   .bx-wrapper {
    margin-bottom: 30px !important;
    }
   .about_home { margin-right: 30px; }
-  
+
   .bottom_box {
         .sponsors {
               max-width: 100%;
@@ -1729,8 +1757,8 @@ aside {
               max-width: 100%;
                margin: 20px 0px;
               }
-        } 
-        
+        }
+
 }
 
 @media (max-width: 768px) {
@@ -1754,11 +1782,11 @@ aside {
   article img,
   aside img {float: none; display: block; width: 100%; height: auto;}
   #main_header #header h1:after { background: none; }
-  
+
   .event-map #map-canvas,
-  
+
   .event-map #map-canvas img {width: 100%; height: auto;}
-  
+
   .grid-1 article img {margin-bottom: 20px;}
   .grid-2 article { width: 100%; }
   .grid-2 article .more { margin-bottom: 20px;}
@@ -1771,24 +1799,24 @@ aside {
   .grid-3-top article {width: 150px; margin-right: 10px;}
   .grid-3-top article h4 {height: 45px;}
   .textual-block article {float: none; width: 100%; margin-right: 0; margin-bottom: 20px;}
-   
+
   .grid-6 article {width: 22%; margin-right: 4%;
     &:nth-child(4n) {margin-right: 0;}
   }
-  
+
   .grid-6 article h3 { font-size: 85%;}
-  
+
   .section-search ul {float:none;}
-  
+
   .main {width: 100%;}
   aside {width: 100%;}
-  
+
   aside .gallery {
-    display: inline-block; 
+    display: inline-block;
   img { width: 48%; margin-right: 4%; float: left; margin-bottom: 4%;}
   }
   aside .gallery a:nth-child(2n) img { margin-right: 0; }
-  
+
   aside section.grid-3 article {float: none; width: 100%;}
   .comments fieldset ul li {
     float: none; width: 100%;
@@ -1803,7 +1831,7 @@ aside {
     .input-info {
     position: relative; top:auto; right: auto;
     a { width: 100%; }
-    
+
     }
     #terms_of_use-label { clear: left; width: auto; }
     #attributes-bio-element { clear: both; }
@@ -1812,13 +1840,13 @@ aside {
   #main_header #header h1 { float: none; overflow: hidden; }
   #main_header #header .radio_player { float: left; margin: 0 20px 20px 0; }
   #main_header #header .donate { float: left; margin: 0px 0px 20px 0px; }
- 
+
   .home_top .bx-wrapper {
    max-width: 100% !important;
    }
   .home_top .about_home { max-width: 100%; margin-right: 0px; }
   .home_top .current_widget { max-width: 100%; }
- 
+
 .article_album {
   figure {
   width: 50%;
@@ -1841,7 +1869,7 @@ aside {
 @media (max-width: 740px) {
 
 .title p {display: none;}
-  
+
 #top {
   .top-menu {
     position: static; float: right; margin-right: 0px;
@@ -1862,7 +1890,7 @@ aside {
     .search-box {
       position: relative;
       width: 16px; height: 35px;
-      padding: 0; margin: 0; 
+      padding: 0; margin: 0;
       border: 0;
       .hiden {
         position: absolute; right: -10px; top: 35px; display: none; z-index: 10;
@@ -1875,9 +1903,9 @@ aside {
       a.search-trigger {display: block; top: 18px; right: 0;}
     }
   }
-  
+
 }
-  
+
   #header {height: auto;}
   #header .grid-3-top {
     position: relative; left: auto; right: auto; clear: both;
@@ -1886,7 +1914,7 @@ aside {
     border-bottom: @border-color solid 1px;
     article {width: 45%; margin-right: 5%;}
   }
-  
+
   #nav-bar {
     position: absolute; left:0; top: 35px;
     width: 100%;
@@ -1921,7 +1949,7 @@ aside {
           &:hover {background-position: 14px 50%; color: @main-color;}
           }
   }
-  
+
     #pages_top {
     position: absolute; left:0; top: 35px;
     width: 100%;
@@ -1947,7 +1975,7 @@ aside {
   }
   .home_top .bx-wrapper h2 { position: relative; }
   .bx-wrapper .bx-pager { position: absolute; top: 60px; }
-  
+
   .article_show article {
   div { width: 100%; }
   p { width: 100%; }
@@ -1965,7 +1993,7 @@ aside {
 #top .top-menu ul li .sub li a {
  line-height: 34px;
  }
-  
+
 }
 
 /* rtl */
@@ -1987,7 +2015,7 @@ body[dir=rtl] {
       float: right;
       }
      }
-    } 
+    }
    }
   }
  .bx-wrapper {
@@ -2003,13 +2031,13 @@ body[dir=rtl] {
  }
 
 @media (max-width: 400px) {
-  comments fieldset ul li.left { width: 100%;} .comments fieldset ul li textarea { width: 90%; } 
+  comments fieldset ul li.left { width: 100%;} .comments fieldset ul li textarea { width: 90%; }
   .article_album {
     figure {
         width: 100%;
         }
   }
-  
+
   .artist_profile article {
       img {
         width: 100%;
@@ -2018,12 +2046,12 @@ body[dir=rtl] {
   #main_header #header h1 { margin: 0 auto; }
   #main_header #header .radio_player {
                     margin: 0 auto;
-                    float: none; 
+                    float: none;
                     }
 }
 
 @media (max-width: 340px) {
-  
+
   .grid-6 article,
   .grid-3 article
   {
@@ -2031,33 +2059,33 @@ body[dir=rtl] {
     &:nth-of-type(6n) {margin-right: 2%;}
   }
   .textual-block article {float: none; width: 100%; margin-right: 0; margin-bottom: 20px;}
-  
+
    #bottom ul li:nth-child(3) ul { display: none;}
    #bottom ul ul { padding-bottom: 0px; }
    #bottom ul li {float: none; width: 100%; margin-right: 0%; margin-bottom: 20px;
     li {width: 100%; margin-bottom: 0;}
   }
-  
+
   .grid-3 article:nth-of-type(2n) {
-   margin-right: 0;  
+   margin-right: 0;
   }
-  
+
   .grid-6 article {
   margin-right:4%;
   &:nth-child(2n) {
-   margin-right: 0;  
+   margin-right: 0;
   }
   }
-  
+
   .grid-6 article h3 {
     font-size: 90%;
   }
-  
+
   .article-list, .comments-list {
     margin-right: 10px;
   }
-    
-  #top .top-menu { 
+
+  #top .top-menu {
     .search-box {
     position: static;
     a.search-trigger {
@@ -2074,7 +2102,7 @@ body[dir=rtl] {
       }
       }
     }
-        
+
     .user-slider li article figure img {
       width: 100%;
     }

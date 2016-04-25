@@ -670,6 +670,7 @@ article {
       tr {
         td {
           text-align: center;
+          padding: 15px;
         }
       }
     }
@@ -677,8 +678,10 @@ article {
       tr {
         border-left: 3px solid #d8d8d8;
         border-bottom: 1px solid #cfcfcf;
-        td:nth-first-child {
-          text-align: center;
+        td {
+          &:nth-child(1) {
+            text-align: center;
+          }
         }
         h4, p {
           display: block;

@@ -23,7 +23,7 @@
         </div>
       </section>
       {{ else if $gimme->section->number == 70 }}
-      <section>
+      <section class="chart">
         <div id="content">
         {{ include file="_tpl/chart-cont.tpl" }}
         </div>

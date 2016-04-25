@@ -38,7 +38,7 @@
       </section><!-- / Entry -->
       {{ /if }}
 
-      {{ if $gimme->article->type_name != Program_Grid && $gimme->section->number != 100 }}
+      {{ if $gimme->article->type_name != Program_Grid && $gimme->section->number != 100 && $gimme->section->number != 70 }}
       {{ include file="_tpl/article-aside.tpl" }}
       {{ /if }}
 

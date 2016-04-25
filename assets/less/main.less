@@ -669,8 +669,10 @@ article {
       border: 1px solid #dddddd;
       tr {
         td {
-          text-align: center;
           padding: 15px;
+          &:nth-child(1) {
+            text-align: center;
+          }
         }
       }
     }
@@ -685,11 +687,13 @@ article {
         }
         h4, p {
           display: block;
-          -webkit-margin-before: 1.33em;
-          -webkit-margin-after: 1.33em;
-          -webkit-margin-start: 0px;
-          -webkit-margin-end: 0px;
+          margin-before: 1.33em;
+          margin-after: 1.33em;
+          margin-start: 0px;
+          margin-end: 0px;
           font-weight: bold;
+          font-size: 13px;
+          line-height: 20px;
         }
       }
     }

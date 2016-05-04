@@ -44,11 +44,13 @@
     <link rel="apple-touch-icon" href="{{url static_file='favicon.ico' }}" />
 
     <link rel="stylesheet" href="{{ url static_file='assets/css/fancybox/jquery.fancybox-1.3.4.css' }}" />
+    <link rel="stylesheet" href="{{ url static_file='assets/css/reset.css' }}" type="text/css" />
+    <link rel="stylesheet" href="{{ url static_file='assets/css/jquery.bxslider.css' }}" type="text/css" />
     <link rel="stylesheet" href="{{ url static_file='dist/css/main.css' }}" type="text/css" />
 
     <!-- js files  -->
     <script src="{{ url static_file='dist/js/libs/jquery.min.js' }}"></script>
-                
+
     <script>
       var apiSrc = "{{ #AirtimeAPI# }}";
     </script>

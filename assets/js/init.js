@@ -16,7 +16,7 @@ $(document).ready(function() {
       audioHeight: 35,
       loop: true,
       iPadUseNativeControls: true,
-      iPhoneUseNativeControls: true, 
+      iPhoneUseNativeControls: true,
       AndroidUseNativeControls: true,
       features: ['volume']
   });
@@ -26,7 +26,7 @@ $(document).ready(function() {
   // audio player
   $('.audio-change, .audio-trigger').click(function (e) {
       e.preventDefault();
-      
+
       if ($('body').hasClass('audio-now-playing')) {
           player.pause();
       } else {
@@ -69,7 +69,7 @@ $(document).ready(function() {
       console.log(data);
       var i = 0;
       var refresh = setInterval(function(){
-        console.log('ping', i);
+        // console.log('ping', i);
         i++;
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;
@@ -188,7 +188,7 @@ $(document).ready(function() {
     return false;
   });
 
-  // active state gubbins for the program grid 
+  // active state gubbins for the program grid
   if ($('.program_grid')[0]){
 
     setTimeout(function(){
@@ -196,7 +196,7 @@ $(document).ready(function() {
       var d = new Date().getDay();
       var dows = new Array('sunday','monday','tuesday','wednesday','thursday','friday','saturday');
       var day = dows[d];
-      
+
       $("#scheduleTabs .tab_container div").each(function(){
         if (!$(this).hasClass(day)){
           $(this).hide();

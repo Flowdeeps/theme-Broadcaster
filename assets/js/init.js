@@ -16,7 +16,7 @@ $(document).ready(function() {
       audioHeight: 35,
       loop: true,
       iPadUseNativeControls: true,
-      iPhoneUseNativeControls: true, 
+      iPhoneUseNativeControls: true,
       AndroidUseNativeControls: true,
       features: ['volume']
   });
@@ -26,7 +26,7 @@ $(document).ready(function() {
   // audio player
   $('.audio-change, .audio-trigger').click(function (e) {
       e.preventDefault();
-      
+
       if ($('body').hasClass('audio-now-playing')) {
           player.pause();
       } else {
@@ -54,11 +54,13 @@ $(document).ready(function() {
   // current
   var dataCurrPrefix = "Current: "
   var dataCurrentName = "";
+  var dataCurrentDescription = "";
   var dataCurrentElapsed = "";
   var dataCurrentRemain = "";
   // next
   var dataNextPrefix = "Next: ";
   var dataNextName = "";
+  var dataNextDescription = "";
   var dataNextStart = "";
   var dataNextEnd = "";
 
@@ -74,15 +76,18 @@ $(document).ready(function() {
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;
         dataCurrentElapsed = data.schedulerTime;
-        // console.log(data.current.ends.split(' '));
+        dataCurrentDescription = data.currentShow.description;
         current.find('h3').html(dataCurrentName);
+        current.find('.description').html(dataCurrentDescription);
         current.find('.elapsed').html(dataCurrentElapsed);
         current.find('.remaining').html(dataCurrentRemain);
         // next
         dataNextName = dataNextPrefix + data.next.name;
+        dataNextDescription = data.nextShow.description;
         dataNextStart = data.nextShow.starts;
         dataNextEnd = data.nextShow.ends;
         next.find('h3').html(dataNextName);
+        next.find('.description').html(dataNextDescription);
         next.find('.start').html(dataNextStart);
         next.find('.end').html(dataNextEnd);
       }, 1000);
@@ -188,7 +193,7 @@ $(document).ready(function() {
     return false;
   });
 
-  // active state gubbins for the program grid 
+  // active state gubbins for the program grid
   if ($('.program_grid')[0]){
 
     setTimeout(function(){
@@ -196,7 +201,7 @@ $(document).ready(function() {
       var d = new Date().getDay();
       var dows = new Array('sunday','monday','tuesday','wednesday','thursday','friday','saturday');
       var day = dows[d];
-      
+
       $("#scheduleTabs .tab_container div").each(function(){
         if (!$(this).hasClass(day)){
           $(this).hide();

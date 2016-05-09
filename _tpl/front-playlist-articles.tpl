@@ -20,6 +20,7 @@
         <ul class="widget now-playing-bar">
             <li class="current">
                 <h3>Now</h3>
+                <p class="description"></p>
                 <dl>
                   <dt>Elapsed:</dt>
                     <dd class="elapsed">0</dd>
@@ -29,6 +30,7 @@
             </li>
             <li class="next">
               <h3>Next</h3>
+              <p class="description"></p>
               <dl>
                 <dt>Start</dt>
                   <dd class="start">0</dd>

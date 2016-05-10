@@ -77,6 +77,9 @@ $(document).ready(function() {
         dataCurrentName = dataCurrPrefix + data.current.name;
         dataCurrentElapsed = data.schedulerTime;
         dataCurrentDescription = data.currentShow.description;
+        if (dataCurrentDescription == "") {
+          dataCurrentDescription = "No show description";
+        }
         current.find('h3').html(dataCurrentName);
         current.find('.description').html(dataCurrentDescription);
         current.find('.elapsed').html(dataCurrentElapsed);
@@ -88,6 +91,9 @@ $(document).ready(function() {
         dataNextEnd = data.nextShow.ends;
         next.find('h3').html(dataNextName);
         next.find('.description').html(dataNextDescription);
+        if (dataNextDescription == "") {
+          dataNextDescription = "No show description";
+        }
         next.find('.start').html(dataNextStart);
         next.find('.end').html(dataNextEnd);
       }, 1000);

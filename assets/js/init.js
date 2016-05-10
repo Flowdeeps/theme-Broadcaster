@@ -76,21 +76,17 @@ $(document).ready(function() {
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;
         dataCurrentElapsed = data.schedulerTime;
-        dataCurrentDescription = data.currentShow.description;
+        dataCurrentDescription = data.currentShow[0].description;
         if (dataCurrentDescription == "") {
           dataCurrentDescription = "No show description";
         }
         current.find('h3').html(dataCurrentName);
         current.find('.description').html(dataCurrentDescription);
-        console.log("current show description is", data.currentShow.description);
-        console.log("current show description is", data.currentShow[0].description);
         current.find('.elapsed').html(dataCurrentElapsed);
         current.find('.remaining').html(dataCurrentRemain);
         // next
         dataNextName = dataNextPrefix + data.next.name;
-        dataNextDescription = data.nextShow.description;
-        console.log("next show description is", data.nextShow.description);
-        console.log("next show description is", data.nextShow[0].description);
+        dataNextDescription = data.nextShow[0].description;
         dataNextStart = data.nextShow.starts;
         dataNextEnd = data.nextShow.ends;
         next.find('h3').html(dataNextName);

@@ -75,24 +75,24 @@ $(document).ready(function() {
         i++;
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;
+        current.find('h3').html(dataCurrentName);
         dataCurrentDescription = data.currentShow[0].description;
         if (dataCurrentDescription == "") {
           dataCurrentDescription = "No show description";
         }
         dataCurrentElapsed = data.schedulerTime;
-        current.find('h3').html(dataCurrentName);
         current.find('.description').html(dataCurrentDescription);
         current.find('.elapsed').html(dataCurrentElapsed);
         // next
         dataNextName = dataNextPrefix + data.next.name;
-        dataNextDescription = data.nextShow[0].description;
-        dataNextStart = data.nextShow[0].starts;
-        dataNextEnd = data.nextShow[0].ends;
         next.find('h3').html(dataNextName);
-        next.find('.description').html(dataNextDescription);
+        dataNextDescription = data.nextShow[0].description;
         if (dataNextDescription == "") {
           dataNextDescription = "No show description";
         }
+        next.find('.description').html(dataNextDescription);
+        dataNextStart = data.nextShow[0].starts;
+        dataNextEnd = data.nextShow[0].ends;
         next.find('.start').html(dataNextStart);
         next.find('.end').html(dataNextEnd);
       }, 1000);

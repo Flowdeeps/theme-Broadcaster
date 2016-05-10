@@ -71,7 +71,7 @@ $(document).ready(function() {
       console.log(data);
       var i = 0;
       var refresh = setInterval(function(){
-        // console.log('ping', i);
+        console.log('balls', i);
         i++;
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;

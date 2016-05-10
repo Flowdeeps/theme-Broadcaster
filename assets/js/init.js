@@ -87,9 +87,10 @@ $(document).ready(function() {
         // next
         dataNextName = dataNextPrefix + data.next.name;
         dataNextDescription = data.nextShow[0].description;
-        dataNextStart = data.nextShow.starts;
-        dataNextEnd = data.nextShow.ends;
+        dataNextStart = data.nextShow[0].starts;
+        dataNextEnd = data.nextShow[0].ends;
         next.find('h3').html(dataNextName);
+        console.log(next.find('.description'));
         next.find('.description').html(dataNextDescription);
         if (dataNextDescription == "") {
           dataNextDescription = "No show description";

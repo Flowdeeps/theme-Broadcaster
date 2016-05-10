@@ -75,22 +75,20 @@ $(document).ready(function() {
         i++;
         // current
         dataCurrentName = dataCurrPrefix + data.current.name;
-        dataCurrentElapsed = data.schedulerTime;
         dataCurrentDescription = data.currentShow[0].description;
         if (dataCurrentDescription == "") {
           dataCurrentDescription = "No show description";
         }
+        dataCurrentElapsed = data.schedulerTime;
         current.find('h3').html(dataCurrentName);
         current.find('.description').html(dataCurrentDescription);
         current.find('.elapsed').html(dataCurrentElapsed);
-        current.find('.remaining').html(dataCurrentRemain);
         // next
         dataNextName = dataNextPrefix + data.next.name;
         dataNextDescription = data.nextShow[0].description;
         dataNextStart = data.nextShow[0].starts;
         dataNextEnd = data.nextShow[0].ends;
         next.find('h3').html(dataNextName);
-        console.log(next.find('.description'));
         next.find('.description').html(dataNextDescription);
         if (dataNextDescription == "") {
           dataNextDescription = "No show description";

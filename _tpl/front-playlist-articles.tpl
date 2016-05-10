@@ -24,8 +24,8 @@
                 <dl>
                   <dt>Elapsed:</dt>
                     <dd class="elapsed">0</dd>
-                  <dt>Remaining:</dt>
-                    <dd class="remaining">0</dd>
+                  <!-- <dt>Remaining:</dt>
+                    <dd class="remaining">0</dd> -->
                 </dl>
             </li>
             <li class="next">
